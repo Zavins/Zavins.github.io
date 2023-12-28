@@ -1,0 +1,36 @@
+body,
+html,
+#root {
+    height: 100%;
+    margin: 0;
+    overscroll-behavior: none;
+}
+
+.timeline-date {
+    font-weight: bold !important;
+}
+
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
