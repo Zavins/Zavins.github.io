@@ -21,6 +21,14 @@
         "camelcase": "error",
         "spaced-comment": "error",
         "no-duplicate-imports": "error",
-        "@typescript-eslint/no-unused-vars": "warn"
+        "@typescript-eslint/no-unused-vars": "warn",
+        "@typescript-eslint/no-explicit-any": "off"
+    },
+    "settings": {
+        "react": {
+          "pragma": "React",  // Pragma to use, default to "React"
+          "fragment": "Fragment",  // Fragment to use (may be a property of <pragma>), default to "Fragment"
+          "version": "detect"
+        }
     }
 }
