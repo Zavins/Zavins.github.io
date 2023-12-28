@@ -65,7 +65,7 @@ export default extendTheme({
         },
     },
     fontFamily: {
-        display: "'Inter', var(--joy-fontFamily-fallback)",
-        body: "'Inter', var(--joy-fontFamily-fallback)",
+        display: "'zy_zheng_yuan'",
+        body: "'zy_zheng_yuan'",
     },
 })
