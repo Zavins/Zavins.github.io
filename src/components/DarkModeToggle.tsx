@@ -1,32 +1,41 @@
-import { styled } from '@mui/joy/styles';
-import Switch from '@mui/joy/Switch';
-import DarkMode from '@mui/icons-material/DarkMode';
-import LightMode from '@mui/icons-material/LightMode';
+import DarkMode from "@mui/icons-material/DarkMode"
+import LightMode from "@mui/icons-material/LightMode"
+import Switch from "@mui/joy/Switch"
 
-interface DarkModeToggleProps{
+interface DarkModeToggleProps {
     checked: boolean
-    onChange: ()=>void
+    onChange: () => void
 }
 
 const DarkModeToggle = (props: DarkModeToggleProps) => {
-    const {checked, onChange} = props
+    const { checked, onChange } = props
 
     return (
         <Switch
-            variant='soft'
+            variant="soft"
+            size="lg"
             slotProps={{
-                input: { 'aria-label': 'Dark mode toggle' },
+                input: { "aria-label": "Dark mode toggle" },
                 thumb: {
-                    children: checked ? <DarkMode/> : <LightMode />,
+                    children: checked ? <DarkMode /> : <LightMode />,
+                },
+                track: {
+                    style: {
+                        backgroundColor: "#ffffff",
+                        border: "2px solid",
+                        borderColor: "#DFDFDF",
+                    },
                 },
             }}
             sx={{
-                '--Switch-thumbSize': '28px',
+                "--Switch-thumbSize": "32px",
+                "--Switch-trackWidth": "64px",
+                "--Switch-trackHeight": "32px",
             }}
             checked={checked}
             onChange={onChange}
         />
-    );
+    )
 }
 
 export default DarkModeToggle
