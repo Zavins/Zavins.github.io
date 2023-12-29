@@ -1,26 +1,11 @@
-import { Icon } from "@iconify/react"
-import { Email, GitHub, Instagram, LinkedIn } from "@mui/icons-material"
-import {
-    AspectRatio,
-    Box,
-    ButtonGroup,
-    Container,
-    IconButton,
-    Link,
-    Modal,
-    ModalClose,
-    ModalDialog,
-    Typography,
-} from "@mui/joy"
+import { AspectRatio, Box, Container, Typography } from "@mui/joy"
 import { typographyClasses } from "@mui/joy/Typography"
-import { useState } from "react"
 import intl from "react-intl-universal"
 import TypeWriter from "typewriter-effect"
 import PageParent from "../components/PageParent"
+import SocialMediaButtons from "../components/SocialMedialButtons"
 
 const MainPage = () => {
-    const [wechatDialogOpen, setWechatDialogOpen] = useState(false)
-
     return (
         <PageParent>
             <Container
@@ -103,56 +88,7 @@ const MainPage = () => {
                             }}
                         />
                     </Typography>
-                    <ButtonGroup
-                        spacing="1.6rem"
-                        aria-label="social media buttons"
-                        sx={{ mt: "1rem", animation: "slideInLeft 0.8s ease forwards" }}
-                    >
-                        <IconButton
-                            component={Link}
-                            variant="solid"
-                            size="lg"
-                            href="mailto:zywang1@uci.edu"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            <Email />
-                        </IconButton>
-                        <IconButton
-                            component={Link}
-                            variant="solid"
-                            size="lg"
-                            href="https://www.github.com/zavins"
-                            target="_blank"
-                        >
-                            <GitHub />
-                        </IconButton>
-                        <IconButton
-                            component={Link}
-                            variant="solid"
-                            size="lg"
-                            href="https://www.linkedin.com/in/zhiyuan-w"
-                            target="_blank"
-                        >
-                            <LinkedIn />
-                        </IconButton>
-                        <IconButton
-                            component={Link}
-                            variant="solid"
-                            size="lg"
-                            href="https://www.instagram.com/zavins_"
-                            target="_blank"
-                        >
-                            <Instagram />
-                        </IconButton>
-                        <IconButton
-                            variant="solid"
-                            size="lg"
-                            onClick={() => setWechatDialogOpen(true)}
-                        >
-                            <Icon icon="mdi:wechat" height={24} width={24} />
-                        </IconButton>
-                    </ButtonGroup>
+                    <SocialMediaButtons />
                 </Box>
                 <AspectRatio
                     ratio={9 / 16}
@@ -177,33 +113,6 @@ const MainPage = () => {
                     />
                 </AspectRatio>
             </Container>
-            {/* Add wechat dialog */}
-            <Modal open={wechatDialogOpen} onClose={() => setWechatDialogOpen(false)}>
-                <ModalDialog
-                    aria-labelledby="variant-modal-title"
-                    aria-describedby="variant-modal-description"
-                    variant="plain"
-                    sx={{ gap: "1rem" }}
-                >
-                    <ModalClose />
-                    <Typography level="title-lg" textColor="inherit">
-                        {intl.get("SCAN_TO_ADD_ME")}
-                    </Typography>
-                    <AspectRatio
-                        ratio={3 / 4}
-                        variant="plain"
-                        sx={() => ({
-                            minWidth: "240px",
-                            borderRadius: 20,
-                        })}
-                    >
-                        <img
-                            src={`${process.env.PUBLIC_URL}/images/wechat.jpg`}
-                            alt="Wechat QR Code"
-                        />
-                    </AspectRatio>
-                </ModalDialog>
-            </Modal>
         </PageParent>
     )
 }
