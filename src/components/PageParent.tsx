@@ -1,65 +1,56 @@
 import { Box } from "@mui/material"
-import { ReactNode, useEffect, useRef } from "react"
+import React, { useCallback, useEffect, useMemo, useRef } from "react"
 
 interface PageParentProps {
-    children: ReactNode
+    children: React.ReactNode
 }
 
 const PageParent = (props: PageParentProps) => {
     const { children } = props
+    const projectContainer = useRef<HTMLDivElement>(null)
+    const start = useMemo(() => ({ x: 0, y: 0, g: Date.now() }), [])
 
-    const projectContainer = useRef<HTMLElement>()
-
-    const start = { x: 0, y: 0 }
-
-    const makeScroll = (e: WheelEvent | TouchEvent) => {
+    const makeScroll = useCallback((e: WheelEvent | TouchEvent) => {
         const deltaY = e instanceof WheelEvent ? e.deltaY : start.y - e.touches[0].clientY
         const moveDown = deltaY > 0
         const { scrollHeight, scrollTop, clientHeight } = e.currentTarget as Element
-        if (
-            (Math.abs(scrollHeight - scrollTop - clientHeight) < 1 && moveDown) ||
-            (scrollTop < 1 && !moveDown)
-        ) {
-            // if scroll to bottom and movedown or scroll to top and move up, then allow scroll
+        if ((Math.abs(scrollHeight - scrollTop - clientHeight) < 1 && moveDown) ||
+            (scrollTop < 1 && !moveDown)) {
             return
         } else {
             e.stopImmediatePropagation()
             e.stopPropagation()
         }
-    }
+    }, [start])
 
-    const onTouchStart = (e: TouchEvent) => {
+    const onTouchStart = useCallback((e: TouchEvent) => {
         start.x = e.touches[0].pageX
         start.y = e.touches[0].pageY
-    }
+    }, [])
 
-    const onWheel = (e: WheelEvent) => {
+    const onWheel = useCallback((e: WheelEvent) => {
         makeScroll(e)
-    }
+    }, [makeScroll])
 
-    const onTouchMove = (e: TouchEvent) => {
+    const onTouchMove = useCallback((e: TouchEvent) => {
         makeScroll(e)
-    }
+    }, [makeScroll])
 
     useEffect(() => {
-        projectContainer.current?.addEventListener("touchstart", onTouchStart, {
-            passive: true,
-            capture: true,
-        })
-        projectContainer.current?.addEventListener("touchmove", onTouchMove, {
-            passive: true,
-            capture: true,
-        })
-        projectContainer.current?.addEventListener("wheel", onWheel, {
-            passive: true,
-            capture: true,
-        })
-        return () => {
-            projectContainer.current?.removeEventListener("touchstart", onTouchStart)
-            projectContainer.current?.removeEventListener("touchmove", onTouchMove)
-            projectContainer.current?.removeEventListener("wheel", onWheel)
+        const container = projectContainer.current
+        if (container) {
+            container.addEventListener("touchstart", onTouchStart, { passive: true, capture: true })
+            container.addEventListener("touchmove", onTouchMove, { passive: true, capture: true })
+            container.addEventListener("wheel", onWheel, { passive: true, capture: true })
         }
-    }, [])
+        return () => {
+            if (container) {
+                container.removeEventListener("touchstart", onTouchStart)
+                container.removeEventListener("touchmove", onTouchMove)
+                container.removeEventListener("wheel", onWheel)
+            }
+        }
+    }, [onTouchStart, onTouchMove, onWheel])
 
     return (
         <Box
