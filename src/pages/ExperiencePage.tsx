@@ -66,7 +66,7 @@ const ExperiencePage = () => {
             date: intl.get("HIGH_SCHOOL_STUDENT_DATE"),
         },
     ]
-    
+
     return (
         <PageParent>
             <PageTitle title={intl.get("RELATED_EXPERIENCE")} />
