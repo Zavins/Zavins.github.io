@@ -12,10 +12,10 @@ const PageTitle = (props: PageTitleProps) => {
             level="h1"
             paddingY="2rem"
             sx={{
-                fontWeight: "800",
+                fontWeight: "900",
                 fontSize: "clamp(20px, 10vw, 48px)",
                 whiteSpace: "nowrap",
-                textShadow: "4px 4px 0px #779eb9",
+                textShadow: "2px 2px 0px #779eb9",
                 mixBlendMode: "screen",
                 animation: "slideInRight 0.8s ease forwards",
             }}

@@ -15,12 +15,12 @@ const MainPage = () => {
                     minHeight: "100%",
                     display: "flex",
                     flexDirection: "column",
-                    justifyContent: "space-between",
+                    justifyContent: "space-around",
                     alignItems: "center",
-                    marginTop: "2rem",
+                    paddingTop: "2rem",
                     [theme.breakpoints.up(834)]: {
                         flexDirection: "row",
-                        marginTop: "0rem",
+                        paddingTop: "0rem",
                     },
                 })}
             >
@@ -30,12 +30,13 @@ const MainPage = () => {
                         flexDirection: "column",
                         alignItems: "center",
                         flexGrow: 1,
-                        gap: "1.4rem",
+                        justifyContent: "space-even",
                         textAlign: "center",
                         [theme.breakpoints.up(834)]: {
                             minWidth: 420,
                             alignItems: "flex-start",
                             textAlign: "initial",
+                            gap: "1.4rem"
                         },
                         [`& .${typographyClasses.root}`]: {
                             textWrap: "balance",
@@ -97,7 +98,6 @@ const MainPage = () => {
                     objectFit="contain"
                     sx={(theme) => ({
                         minWidth: "180px",
-                        margin: "2rem",
                         flexGrow: 2,
                         [theme.breakpoints.up(834)]: {
                             flexGrow: 0,

@@ -69,7 +69,7 @@ const Timeline = (props: TimelineProps) => {
                     <Typography
                         level="h3"
                         fontWeight="800"
-                        sx={{ fontSize: "clamp(18px, 5vw, 26px)", whiteSpace: "nowrap" }}
+                        sx={{ fontSize: "clamp(16px, 4.6vw, 26px)", whiteSpace: "nowrap" }}
                     >
                         {e.title}
                     </Typography>
