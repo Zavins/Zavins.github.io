@@ -12,7 +12,6 @@ const SocialMediaButtons = () => {
             aria-label="social media buttons"
             sx={{ mt: "1rem", animation: "slideInLeft 0.8s ease forwards" }}
         >
-            <WechatDialog open={wechatDialogOpen} onClose={() => setWechatDialogOpen(false)} />
             <IconButton
                 component={Link}
                 variant="solid"
@@ -53,6 +52,7 @@ const SocialMediaButtons = () => {
             <IconButton variant="solid" size="lg" onClick={() => setWechatDialogOpen(true)}>
                 <Icon icon="mdi:wechat" height={24} width={24} />
             </IconButton>
+            <WechatDialog open={wechatDialogOpen} onClose={() => setWechatDialogOpen(false)} />
         </ButtonGroup>
     )
 }
