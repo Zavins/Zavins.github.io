@@ -36,7 +36,7 @@ const MainPage = () => {
                             minWidth: 420,
                             alignItems: "flex-start",
                             textAlign: "initial",
-                            gap: "1.4rem"
+                            gap: "1.4rem",
                         },
                         [`& .${typographyClasses.root}`]: {
                             textWrap: "balance",
@@ -103,8 +103,8 @@ const MainPage = () => {
                             flexGrow: 0,
                             minWidth: "320px",
                             "--AspectRatio-maxHeight": "620px",
-                            "--AspectRatio-minHeight": "480px"
-                        }
+                            "--AspectRatio-minHeight": "480px",
+                        },
                     })}
                 >
                     <img

@@ -6,7 +6,7 @@ import {
     CardActions,
     CardContent,
     CardOverflow,
-    Typography
+    Typography,
 } from "@mui/joy"
 import { useState } from "react"
 import ProjectDialog from "./ProjectDialog"
@@ -30,8 +30,8 @@ const ProjectCard = () => {
                     Fablix Movie
                 </Typography>
                 <Typography level="body-sm">
-                    A movie store website similar to Netflix. It contains user login, movie
-                    search, and checkout page.{" "}
+                    A movie store website similar to Netflix. It contains user login, movie search,
+                    and checkout page.{" "}
                 </Typography>
             </CardContent>
             <CardActions sx={{ justifyContent: "space-between" }}>
@@ -41,7 +41,10 @@ const ProjectCard = () => {
                 <Button variant="solid" size="md" onClick={() => setProjectDialogOpen(true)}>
                     View Detail
                 </Button>
-                <ProjectDialog open={projectDialogOpen} onClose={() => setProjectDialogOpen(false)} />
+                <ProjectDialog
+                    open={projectDialogOpen}
+                    onClose={() => setProjectDialogOpen(false)}
+                />
             </CardActions>
         </Card>
     )

@@ -1,9 +1,4 @@
-import {
-    Modal,
-    ModalClose,
-    ModalDialog,
-    Typography
-} from "@mui/joy"
+import { Modal, ModalClose, ModalDialog, Typography } from "@mui/joy"
 import { Box } from "@mui/material"
 
 interface ProjectDialogProps {
