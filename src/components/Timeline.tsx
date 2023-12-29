@@ -75,7 +75,7 @@ const Timeline = (props: TimelineProps) => {
                     </Typography>
                     <Typography
                         level="h4"
-                        sx={{ fontSize: "clamp(13px, 3.5vw, 16px)", whiteSpace: "nowrap" }}
+                        sx={{ fontSize: "clamp(12px, 3.2vw, 16px)", whiteSpace: "nowrap" }}
                     >
                         {e.subtitle}
                     </Typography>
