@@ -52,7 +52,7 @@ const MainPage = () => {
                     </Typography>
                     <Typography
                         level="h1"
-                        fontSize="clamp(2rem, 1.6rem + 2.2vw, 4rem)"
+                        fontSize="clamp(2rem, 1.6rem + 2.2vw, 5rem)"
                         sx={{ fontWeight: "900", animation: "slideInRight 0.8s ease forwards" }}
                     >
                         {intl.get("ZHIYUAN_WANG")}
@@ -103,8 +103,8 @@ const MainPage = () => {
                             flexGrow: 0,
                             minWidth: "320px",
                             "--AspectRatio-maxHeight": "620px",
-                            "--AspectRatio-minHeight": "480px",
-                        },
+                            "--AspectRatio-minHeight": "480px"
+                        }
                     })}
                 >
                     <img
