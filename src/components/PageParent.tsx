@@ -10,31 +10,42 @@ const PageParent = (props: PageParentProps) => {
     const projectContainer = useRef<HTMLDivElement>(null)
     const start = useMemo(() => ({ x: 0, y: 0, g: Date.now() }), [])
 
-    const makeScroll = useCallback((e: WheelEvent | TouchEvent) => {
-        const deltaY = e instanceof WheelEvent ? e.deltaY : start.y - e.touches[0].clientY
-        const moveDown = deltaY > 0
-        const { scrollHeight, scrollTop, clientHeight } = e.currentTarget as Element
-        if ((Math.abs(scrollHeight - scrollTop - clientHeight) < 1 && moveDown) ||
-            (scrollTop < 1 && !moveDown)) {
-            return
-        } else {
-            e.stopImmediatePropagation()
-            e.stopPropagation()
-        }
-    }, [start])
+    const makeScroll = useCallback(
+        (e: WheelEvent | TouchEvent) => {
+            const deltaY = e instanceof WheelEvent ? e.deltaY : start.y - e.touches[0].clientY
+            const moveDown = deltaY > 0
+            const { scrollHeight, scrollTop, clientHeight } = e.currentTarget as Element
+            if (
+                (Math.abs(scrollHeight - scrollTop - clientHeight) < 1 && moveDown) ||
+                (scrollTop < 1 && !moveDown)
+            ) {
+                return
+            } else {
+                e.stopImmediatePropagation()
+                e.stopPropagation()
+            }
+        },
+        [start],
+    )
 
     const onTouchStart = useCallback((e: TouchEvent) => {
         start.x = e.touches[0].pageX
         start.y = e.touches[0].pageY
     }, [])
 
-    const onWheel = useCallback((e: WheelEvent) => {
-        makeScroll(e)
-    }, [makeScroll])
+    const onWheel = useCallback(
+        (e: WheelEvent) => {
+            makeScroll(e)
+        },
+        [makeScroll],
+    )
 
-    const onTouchMove = useCallback((e: TouchEvent) => {
-        makeScroll(e)
-    }, [makeScroll])
+    const onTouchMove = useCallback(
+        (e: TouchEvent) => {
+            makeScroll(e)
+        },
+        [makeScroll],
+    )
 
     useEffect(() => {
         const container = projectContainer.current
