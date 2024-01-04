@@ -33,9 +33,10 @@ const ProjectGithubButton = (props: ProjectGithubButtonProps) => {
                         width: "50px",
                         fontSize: "41px",
                         borderBottomRightRadius: "50px",
-                        borderTopRightRadius: "50px"
-                    }
-                }}>
+                        borderTopRightRadius: "50px",
+                    },
+                }}
+            >
                 <GitHub fontSize="inherit" />
             </IconButton>
             <Box height="24px">{/* Placeholder */}</Box>

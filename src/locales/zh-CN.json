@@ -47,9 +47,7 @@
     "PERSONAL_WEBSITE_DESCRIPTION": "我的个人网站展示了之前的经历和项目。这个网站经过深思熟虑的设计，支持英文和中文两种语言。",
     "PONG_GAME_ONLINE": "在线乒乓球游戏",
     "PONG_GAME_ONLINE_DESCRIPTION": "一款在线乒乓球对战游戏，具有创新的球拍控制功能。玩家将与复杂的 AI 对手竞争。",
-    "PONG_GAME_ONLINE_DETAILS": [
-        "利用几何、三角学和线性代数构建算法，增强了动画的流畅性。"
-    ],
+    "PONG_GAME_ONLINE_DETAILS": ["利用几何、三角学和线性代数构建算法，增强了动画的流畅性。"],
     "PORTFOLIO_ZHIYUAN_WANG": "王致远的个人网站",
     "RELATED_EXPERIENCE": "相 关 经 历",
     "RESEARCH_ASSISTANT_DATE": "2022年9月 - 2023年4月",

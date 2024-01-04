@@ -14,14 +14,24 @@ const ProjectPage = () => {
         {
             title: intl.get("FABLIX_MOVIE"),
             description: intl.get("FABLIX_MOVIE_DESCRIPTION"),
-            details: intl.get("FABLIX_MOVIE_DETAILS")  as unknown as string[],
-            techStacks: ["Java", "JavaScript", "JMeter", "HTML5", "CSS3", "JQuery", "MySQL", "BootStrap", "AWS"],
+            details: intl.get("FABLIX_MOVIE_DETAILS") as unknown as string[],
+            techStacks: [
+                "Java",
+                "JavaScript",
+                "JMeter",
+                "HTML5",
+                "CSS3",
+                "JQuery",
+                "MySQL",
+                "BootStrap",
+                "AWS",
+            ],
             img: {
                 src: `${process.env.PUBLIC_URL}/images/fablix.png`,
                 alt: "Fablix movie website cover picture",
             },
             github: "https://github.com/Zavins/fablix-movie",
-            link: "https://fablix.zavins.me"
+            link: "https://fablix.zavins.me",
         },
         {
             title: intl.get("PERSONAL_WEBSITE"),
@@ -38,13 +48,22 @@ const ProjectPage = () => {
             title: intl.get("MINDWISE"),
             description: intl.get("MINDWISE_DESCRIPTION"),
             details: [],
-            techStacks: ["React", "TypeScript", "Material UI", "HTML5", "CSS3", "Python", "FastAPI", "Docker"],
+            techStacks: [
+                "React",
+                "TypeScript",
+                "Material UI",
+                "HTML5",
+                "CSS3",
+                "Python",
+                "FastAPI",
+                "Docker",
+            ],
             img: {
                 src: `${process.env.PUBLIC_URL}/images/mindwise.png`,
                 alt: "MindWise website cover picture",
             },
             github: "https://github.com/Zavins/mindwise",
-            link: "https://mindwise.zavins.me"
+            link: "https://mindwise.zavins.me",
         },
         {
             title: intl.get("CRYPTOTRACKER"),
@@ -78,10 +97,9 @@ const ProjectPage = () => {
                 alt: "Pong game online cover picture",
             },
             github: "https://github.com/zavins/PongGame",
-            link: "https://pong.zavins.me"
+            link: "https://pong.zavins.me",
         },
-    ];
-    
+    ]
 
     return (
         <PageParent>
@@ -101,7 +119,10 @@ const ProjectPage = () => {
                             description={project.description}
                             img={project.img}
                             link={project?.link}
-                            onClickViewDetail={() => { setProjectDialogOpen(true); setProjectDialogIndex(i) }}
+                            onClickViewDetail={() => {
+                                setProjectDialogOpen(true)
+                                setProjectDialogIndex(i)
+                            }}
                         />
                     </Grid>
                 ))}

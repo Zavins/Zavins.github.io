@@ -37,17 +37,18 @@ const ProjectCard = (props: ProjectCardProps) => {
                 <Typography level="body-sm">{description}</Typography>
             </CardContent>
             <CardActions sx={{ justifyContent: "space-between" }}>
-                {link!==undefined && <Button
-                    variant="solid"
-                    component="a"
-                    href={link}
-                    target="_blank"
-                    color="neutral"
-                    endDecorator={<Visibility />}
-                >
-                    {intl.get("VISIT_SITE")}
-                </Button>
-                }
+                {link !== undefined && (
+                    <Button
+                        variant="solid"
+                        component="a"
+                        href={link}
+                        target="_blank"
+                        color="neutral"
+                        endDecorator={<Visibility />}
+                    >
+                        {intl.get("VISIT_SITE")}
+                    </Button>
+                )}
                 <Button variant="solid" size="md" onClick={onClickViewDetail}>
                     {intl.get("VIEW_DETAIL")}
                 </Button>
