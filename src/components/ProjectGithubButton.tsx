@@ -33,6 +33,7 @@ const ProjectGithubButton = (props: ProjectGithubButtonProps) => {
                         width: "50px",
                         fontSize: "41px",
                         borderBottomRightRadius: "50px",
+                        borderTopLeftRadius: "16px",
                         borderTopRightRadius: "50px",
                     },
                 }}
