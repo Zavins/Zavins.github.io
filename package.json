@@ -1,8 +1,9 @@
 {
-    "name": "my-app",
-    "version": "0.1.0",
+    "name": "personal-website",
+    "version": "0.0.1",
     "private": true,
     "dependencies": {
+        "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
         "@emotion/react": "^11.11.3",
         "@emotion/styled": "^11.11.0",
         "@fullpage/react-fullpage": "^0.1.40",
@@ -20,7 +21,6 @@
         "react-dom": "^18.2.0",
         "react-intl-universal": "^2.9.1",
         "react-page-scroller": "^3.0.1",
-        "react-router-dom": "^6.21.1",
         "react-scripts": "5.0.1",
         "react-vertical-timeline-component": "^3.6.0",
         "typescript": "^4.9.5",
@@ -55,7 +55,6 @@
         ]
     },
     "devDependencies": {
-        "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
         "@testing-library/jest-dom": "^6.1.6",
         "@testing-library/react": "^14.1.2",
         "@testing-library/user-event": "^14.5.1",
