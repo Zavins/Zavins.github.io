@@ -1,4 +1,4 @@
-import { GitHub } from "@mui/icons-material"
+import { Visibility } from "@mui/icons-material"
 import {
     AspectRatio,
     Button,
@@ -17,12 +17,12 @@ interface ProjectCardProps {
         src: string
         alt?: string
     }
-    github: string
+    link?: string
     onClickViewDetail: () => void
 }
 
 const ProjectCard = (props: ProjectCardProps) => {
-    const { title, description, img, github, onClickViewDetail } = props
+    const { title, description, img, link, onClickViewDetail } = props
     return (
         <Card variant="soft" sx={{ width: 320 }}>
             <CardOverflow>
@@ -37,16 +37,17 @@ const ProjectCard = (props: ProjectCardProps) => {
                 <Typography level="body-sm">{description}</Typography>
             </CardContent>
             <CardActions sx={{ justifyContent: "space-between" }}>
-                <Button
+                {link!==undefined && <Button
                     variant="solid"
                     component="a"
-                    href={github}
+                    href={link}
                     target="_blank"
                     color="neutral"
-                    endDecorator={<GitHub />}
+                    endDecorator={<Visibility />}
                 >
-                    {intl.get("GITHUB")}
+                    {intl.get("VISIT_SITE")}
                 </Button>
+                }
                 <Button variant="solid" size="md" onClick={onClickViewDetail}>
                     {intl.get("VIEW_DETAIL")}
                 </Button>

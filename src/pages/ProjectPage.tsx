@@ -8,22 +8,26 @@ import ProjectDialog from "../components/ProjectDialog"
 
 const ProjectPage = () => {
     const [projectDialogOpen, setProjectDialogOpen] = useState(false)
+    const [projectDialogIndex, setProjectDialogIndex] = useState(0)
 
     const PROJECTS = [
         {
-            title: "Fablix Movie",
-            description:
-                "A movie store website similar to Netflix. It contains user-friendly login, search, and checkout pages, available as both a website and an Android app.",
+            title: intl.get("FABLIX_MOVIE"),
+            description: intl.get("FABLIX_MOVIE_DESCRIPTION"),
+            details: intl.get("FABLIX_MOVIE_DETAILS")  as unknown as string[],
+            techStacks: ["Java", "JavaScript", "JMeter", "HTML5", "CSS3", "JQuery", "MySQL", "BootStrap", "AWS"],
             img: {
                 src: `${process.env.PUBLIC_URL}/images/fablix.png`,
                 alt: "Fablix movie website cover picture",
             },
             github: "https://github.com/Zavins/fablix-movie",
+            link: "https://fablix.zavins.me"
         },
         {
-            title: "Personal Website",
-            description:
-                "My personal wesbite demonstrates previous experiences and projects. This website is thoughtfully designed to be accessible in both English and Chinese.",
+            title: intl.get("PERSONAL_WEBSITE"),
+            description: intl.get("PERSONAL_WEBSITE_DESCRIPTION"),
+            details: [],
+            techStacks: ["React", "TypeScript", "Material UI", "HTML5", "CSS3", "Docker", "Nginx"],
             img: {
                 src: `${process.env.PUBLIC_URL}/images/personal_website.png`,
                 alt: "My personal website cover picture",
@@ -31,19 +35,22 @@ const ProjectPage = () => {
             github: "https://github.com/Zavins/zavins.github.io",
         },
         {
-            title: "MindWise",
-            description:
-                "MindWise helps to visualize complex ideas and concepts. The application utilizes AI to create organized mind maps and intuitive explanations for the input text.",
+            title: intl.get("MINDWISE"),
+            description: intl.get("MINDWISE_DESCRIPTION"),
+            details: [],
+            techStacks: ["React", "TypeScript", "Material UI", "HTML5", "CSS3", "Python", "FastAPI", "Docker"],
             img: {
                 src: `${process.env.PUBLIC_URL}/images/mindwise.png`,
                 alt: "MindWise website cover picture",
             },
             github: "https://github.com/Zavins/mindwise",
+            link: "https://mindwise.zavins.me"
         },
         {
-            title: "CryptoTracker",
-            description:
-                "A android application designed to enable users to track real-time cryptocurrency prices, offering a user-friendly interface for monitoring market trends.",
+            title: intl.get("CRYPTOTRACKER"),
+            description: intl.get("CRYPTOTRACKER_DESCRIPTION"),
+            details: intl.get("CRYPTOTRACKER_DETAILS") as unknown as string[],
+            techStacks: ["Android Studio", "Kotlin"],
             img: {
                 src: `${process.env.PUBLIC_URL}/images/cryptotracker.png`,
                 alt: "CryptoTracker website cover picture",
@@ -51,9 +58,10 @@ const ProjectPage = () => {
             github: "https://github.com/Zavins/CryptoTracker",
         },
         {
-            title: "Search Engine Project",
-            description:
-                "The project comprises a web crawler, an index builder, a search engine, and a web interface, allowing users to search through more than 2GB of data in milliseconds.",
+            title: intl.get("SEARCH_ENGINE_PROJECT"),
+            description: intl.get("SEARCH_ENGINE_PROJECT_DESCRIPTION"),
+            details: [],
+            techStacks: ["Python", "Beautiful Soup", "React", "Material UI", "CSS3", "JavaScript"],
             img: {
                 src: `${process.env.PUBLIC_URL}/images/search_engine_project.png`,
                 alt: "Search engine project cover picture",
@@ -61,22 +69,25 @@ const ProjectPage = () => {
             github: "https://github.com/Zavins/search-engine-project",
         },
         {
-            title: "Pong Game Online",
-            description:
-                "An online pong game battle game featuring innovative paddle controls. Players will compete against a sophisticated AI opponent.",
+            title: intl.get("PONG_GAME_ONLINE"),
+            description: intl.get("PONG_GAME_ONLINE_DESCRIPTION"),
+            details: intl.get("PONG_GAME_ONLINE_DETAILS") as unknown as string[],
+            techStacks: ["JavaScript", "HTML5", "CSS3"],
             img: {
                 src: `${process.env.PUBLIC_URL}/images/pong_game.png`,
                 alt: "Pong game online cover picture",
             },
             github: "https://github.com/zavins/PongGame",
+            link: "https://pong.zavins.me"
         },
-    ]
+    ];
+    
 
     return (
         <PageParent>
             <PageTitle title={intl.get("TECHNICAL_PROJECTS")} />
             <Grid container rowSpacing={{ xs: 4, lg: 12 }}>
-                {PROJECTS.map((project) => (
+                {PROJECTS.map((project, i) => (
                     <Grid
                         xs={12}
                         md={6}
@@ -89,13 +100,20 @@ const ProjectPage = () => {
                             title={project.title}
                             description={project.description}
                             img={project.img}
-                            github={project.github}
-                            onClickViewDetail={() => setProjectDialogOpen(true)}
+                            link={project?.link}
+                            onClickViewDetail={() => { setProjectDialogOpen(true); setProjectDialogIndex(i) }}
                         />
                     </Grid>
                 ))}
             </Grid>
-            <ProjectDialog open={projectDialogOpen} onClose={() => setProjectDialogOpen(false)} />
+            <ProjectDialog
+                title={PROJECTS[projectDialogIndex].title}
+                github={PROJECTS[projectDialogIndex].github}
+                details={PROJECTS[projectDialogIndex].details}
+                techStacks={PROJECTS[projectDialogIndex].techStacks}
+                open={projectDialogOpen}
+                onClose={() => setProjectDialogOpen(false)}
+            />
         </PageParent>
     )
 }
