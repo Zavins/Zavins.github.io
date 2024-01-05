@@ -56,9 +56,9 @@ const PageParent = (props: PageParentProps) => {
         }
         return () => {
             if (container) {
-                container.removeEventListener("touchstart", onTouchStart)
-                container.removeEventListener("touchmove", onTouchMove)
-                container.removeEventListener("wheel", onWheel)
+                container.removeEventListener("touchstart", onTouchStart, true)
+                container.removeEventListener("touchmove", onTouchMove, true)
+                container.removeEventListener("wheel", onWheel, true)
             }
         }
     }, [onTouchStart, onTouchMove, onWheel])
