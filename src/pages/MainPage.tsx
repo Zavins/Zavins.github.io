@@ -1,7 +1,8 @@
-import { AspectRatio, Box, Container, Typography } from "@mui/joy"
+import { Box, Container, Typography } from "@mui/joy"
 import { typographyClasses } from "@mui/joy/Typography"
 import intl from "react-intl-universal"
 import TypeWriter from "typewriter-effect"
+import Character from "../components/Character"
 import PageParent from "../components/PageParent"
 import SocialMediaButtons from "../components/SocialMedialButtons"
 
@@ -91,27 +92,7 @@ const MainPage = () => {
                     </Typography>
                     <SocialMediaButtons />
                 </Box>
-                <AspectRatio
-                    ratio={9 / 16}
-                    variant="plain"
-                    maxHeight="80vh"
-                    objectFit="contain"
-                    sx={(theme) => ({
-                        minWidth: "180px",
-                        flexGrow: 2,
-                        [theme.breakpoints.up(834)]: {
-                            flexGrow: 0,
-                            minWidth: "320px",
-                            "--AspectRatio-maxHeight": "620px",
-                            "--AspectRatio-minHeight": "480px",
-                        },
-                    })}
-                >
-                    <img
-                        src={`${process.env.PUBLIC_URL}/images/avatar.png`}
-                        alt="Zavins's Avatar"
-                    />
-                </AspectRatio>
+                <Character />
             </Container>
         </PageParent>
     )
