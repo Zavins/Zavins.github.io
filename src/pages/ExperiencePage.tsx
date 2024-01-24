@@ -6,14 +6,14 @@ import Timeline from "../components/Timeline"
 const ExperiencePage = () => {
     const EVENTS = [
         {
-            title: intl.get("MS_IN_COMPUTER_SCIENCE"),
-            subtitle: intl.get("UNIVERSITY_OF_SOUTHERN_CALIFORNIA_SUBTITLE"),
-            detail: intl.get("MS_IN_COMPUTER_SCIENCE_DETAIL"),
+            title: intl.get("MENG_IN_COMPUTER_SCIENCE"),
+            subtitle: intl.get("CORNELL_UNIVERSITY_SUBTITLE"),
+            detail: intl.get("MENG_IN_COMPUTER_SCIENCE_DETAIL"),
             icon: {
-                src: `${process.env.PUBLIC_URL}/images/usc_logo.png`,
-                alt: intl.get("UNIVERSITY_OF_SOUTHERN_CALIFORNIA_LOGO"),
+                src: `${process.env.PUBLIC_URL}/images/cornell_logo.png`,
+                alt: intl.get("CORNELL_UNIVERSITY_LOGO"),
             },
-            date: intl.get("MS_IN_COMPUTER_SCIENCE_DATE"),
+            date: intl.get("MENG_IN_COMPUTER_SCIENCE_DATE"),
         },
         {
             title: intl.get("FULL_STACK_SOFTWARE_ENGINEER"),
