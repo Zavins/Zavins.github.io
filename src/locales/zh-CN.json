@@ -39,11 +39,16 @@
     "HIGH_SCHOOL_STUDENT": "高中生",
     "HI_MY_NAME_IS": "你好呀! 我是",
     "I_CREATE_SOFTWARE_TO_SOLVE_REAL_WORLD_CHALLENGES": "我用编程技术来解决世界上的难题。",
-    "MINDWISE": "MindWise 脑图生成网站",
-    "MINDWISE_DESCRIPTION": "MindWise 帮助可视化复杂的想法和概念。该应用程序利用 AI 创建有组织的思维导图和对输入文本的直观解释。",
     "MENG_IN_COMPUTER_SCIENCE_DATE": "2024年1月 - 2024年12月",
     "MENG_IN_COMPUTER_SCIENCE_DETAIL": "计算机网络, 操作系统, 并行计算",
     "MENG_IN_COMPUTER_SCIENCE": "计算机科学硕士",
+    "MINDWISE": "MindWise 脑图生成网站",
+    "MINDWISE_DESCRIPTION": "MindWise 帮助可视化复杂的想法和概念。该应用程序利用 AI 创建有组织的思维导图和对输入文本的直观解释。",
+    "MINDWISE_DETAILS": [
+        "使用React开发了一个网页工具, 利用大型语言模型(LLM)将复杂文本内容组织成思维导图。",
+        "使用Fast API开发HTTP服务器, 并调用OpenAI API和预处理的Prompt从ChatGPT 模型获取结果。",
+        "使用Docker构建服务镜像并将其应用部署在Kubernetes集群上, 使用ArgoCD维护微服务状态。"
+    ],
     "NYC_LAB_HIGH_SCHOOL_LOGO": "纽约市Lab高中标志",
     "NYC_LAB_SCHOOL_FOR_COLLABORATIVE_STUDIES_SUBTITLE": "纽约市Lab高中",
     "PERSONAL_WEBSITE": "个人网站",

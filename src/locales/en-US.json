@@ -43,6 +43,11 @@
     "MENG_IN_COMPUTER_SCIENCE": "MEng. in Computer Science",
     "MINDWISE_DESCRIPTION": "MindWise helps to visualize complex ideas and concepts. The application utilizes AI to create organized mind maps and intuitive explanations for the input text.",
     "MINDWISE": "MindWise",
+    "MINDWISE_DETAILS": [
+        "Developed a tool that uses LLM to organize complex text into a mind map and provide an intuitive explanation.",
+        "Utilized Python to create a HTTP server and called OpenAI API using fine-tuned prompts to generate results.",
+        "Implemented a dynamic web page using React, and deployed the web app using Nginx on Google Cloud instance."
+    ],
     "NYC_LAB_HIGH_SCHOOL_LOGO": "NYC Lab High School Logo",
     "NYC_LAB_SCHOOL_FOR_COLLABORATIVE_STUDIES_SUBTITLE": "NYC Lab School for Collaborative Studies",
     "PERSONAL_WEBSITE_DESCRIPTION": "My personal website demonstrates previous experiences and projects. This website is thoughtfully designed to be accessible in both English and Chinese.",

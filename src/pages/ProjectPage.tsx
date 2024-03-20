@@ -47,7 +47,7 @@ const ProjectPage = () => {
         {
             title: intl.get("MINDWISE"),
             description: intl.get("MINDWISE_DESCRIPTION"),
-            details: [],
+            details: intl.get("MINDWISE_DETAILS") as unknown as string[],
             techStacks: [
                 "React",
                 "TypeScript",
