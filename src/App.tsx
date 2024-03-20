@@ -37,11 +37,14 @@ const initializeIntl = () => {
     })
 
     // Fallback to "en-US" if the currentLocale isn't supported in LOCALES_LIST
-    if (!LOCALES_LIST.some((item) => item.value === currentLocale)) {
+    const locales = LOCALES_LIST.filter(
+        (item) => item.value.toLowerCase() === currentLocale.toLowerCase(),
+    )
+    if (locales.length === 0) {
         currentLocale = "en-US"
     }
 
-    return currentLocale
+    return locales[0].value
 }
 
 const App = () => {
