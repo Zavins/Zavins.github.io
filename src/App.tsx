@@ -41,7 +41,7 @@ const initializeIntl = () => {
         (item) => item.value.toLowerCase() === currentLocale.toLowerCase(),
     )
     if (locales.length === 0) {
-        currentLocale = "en-US"
+        return "en-US"
     }
 
     return locales[0].value
