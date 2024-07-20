@@ -6,6 +6,16 @@ import Timeline from "../components/Timeline"
 const ExperiencePage = () => {
     const EVENTS = [
         {
+            title: intl.get("SOFTWARE_ENGINEER_INTERN"),
+            subtitle: intl.get("TENCENT_AMERICA"),
+            detail: intl.get("SOFTWARE_ENGINEER_INTERN_DETAIL"),
+            icon: {
+                src: `${process.env.PUBLIC_URL}/images/tencent_america_logo.png`,
+                alt: intl.get("TENCENT_AMERICA_LOGO"),
+            },
+            date: intl.get("SOFTWARE_ENGINEER_INTERN_DATE"),
+        },
+        {
             title: intl.get("MENG_IN_COMPUTER_SCIENCE"),
             subtitle: intl.get("CORNELL_UNIVERSITY_SUBTITLE"),
             detail: intl.get("MENG_IN_COMPUTER_SCIENCE_DETAIL"),
