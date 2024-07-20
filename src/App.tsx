@@ -3,7 +3,6 @@ import MainPage from "./pages/MainPage"
 import { CssBaseline } from "@mui/joy"
 import { useColorScheme } from "@mui/joy/styles"
 import intl from "react-intl-universal"
-import ReactPageScroller from "react-page-scroller"
 import AppBar from "./components/AppBar"
 
 import { useEffect, useState } from "react"
@@ -11,6 +10,7 @@ import enUS from "./locales/en-US.json"
 import zhCN from "./locales/zh-CN.json"
 import ExperiencePage from "./pages/ExperiencePage"
 import ProjectPage from "./pages/ProjectPage"
+import { FullpageContainer, Page, ScrollContent } from "react-ts-full-page-scroll"
 
 const LOCALES_LIST = [
     {
@@ -31,7 +31,7 @@ const LOCALE_DATA = {
 // https://github.com/alibaba/react-intl-universal/blob/master/packages/react-intl-universal/examples/browser-example/pages/index.tsx
 const initializeIntl = () => {
     // Get the currentLocale from url, cookie, or browser setting
-    let currentLocale = intl.determineLocale({
+    const currentLocale = intl.determineLocale({
         urlLocaleKey: "lang", // Example: https://fe-tool.com/react-intl-universal?lang=en-US
         cookieLocaleKey: "lang", // Example: "lang=en-US" in cookie
     })
@@ -74,23 +74,25 @@ const App = () => {
             <CssBaseline />
 
             {initDone && (
-                <ReactPageScroller
-                    animationTimer={1000}
-                    animationTimerBuffer={100}
-                    renderAllPagesOnFirstRender
-                >
-                    <>
-                        <AppBar
-                            locale={currentLocale}
-                            themeMode={themeMode}
-                            onLocaleChange={onLocaleChange}
-                            onDarkModeChange={setMode}
-                        />
-                        <MainPage />
-                    </>
-                    <ProjectPage />
-                    <ExperiencePage />
-                </ReactPageScroller>
+                <FullpageContainer delay={1000}>
+                    <ScrollContent>
+                        <Page className="page" index={0}>
+                            <AppBar
+                                locale={currentLocale}
+                                themeMode={themeMode}
+                                onLocaleChange={onLocaleChange}
+                                onDarkModeChange={setMode}
+                            />
+                            <MainPage />
+                        </Page>
+                        <Page className="page" index={1}>
+                            <ProjectPage />
+                        </Page>
+                        <Page className="page" index={2}>
+                            <ExperiencePage />
+                        </Page>
+                    </ScrollContent>
+                </FullpageContainer>
             )}
         </>
     )

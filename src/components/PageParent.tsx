@@ -8,11 +8,12 @@ interface PageParentProps {
 const PageParent = (props: PageParentProps) => {
     const { children } = props
     const projectContainer = useRef<HTMLDivElement>(null)
-    const start = useMemo(() => ({ x: 0, y: 0, g: Date.now() }), [])
+    const start = useMemo(() => ({ x: 0, y: 0 }), [])
 
     const makeScroll = useCallback(
         (e: WheelEvent | TouchEvent) => {
-            const deltaY = e instanceof WheelEvent ? e.deltaY : start.y - e.touches[0].clientY
+            const deltaY =
+                e instanceof WheelEvent ? e.deltaY : start.y - e.changedTouches[0].clientY
             const moveDown = deltaY > 0
             const { scrollHeight, scrollTop, clientHeight } = e.currentTarget as Element
             if (
@@ -29,8 +30,8 @@ const PageParent = (props: PageParentProps) => {
     )
 
     const onTouchStart = useCallback((e: TouchEvent) => {
-        start.x = e.touches[0].pageX
-        start.y = e.touches[0].pageY
+        start.x = e.changedTouches[0].pageX
+        start.y = e.changedTouches[0].pageY
     }, [])
 
     const onWheel = useCallback(
@@ -40,7 +41,7 @@ const PageParent = (props: PageParentProps) => {
         [makeScroll],
     )
 
-    const onTouchMove = useCallback(
+    const onTouchEnd = useCallback(
         (e: TouchEvent) => {
             makeScroll(e)
         },
@@ -50,18 +51,18 @@ const PageParent = (props: PageParentProps) => {
     useEffect(() => {
         const container = projectContainer.current
         if (container) {
-            container.addEventListener("touchstart", onTouchStart, { passive: true, capture: true })
-            container.addEventListener("touchmove", onTouchMove, { passive: true, capture: true })
-            container.addEventListener("wheel", onWheel, { passive: true, capture: true })
+            container.addEventListener("touchstart", onTouchStart)
+            container.addEventListener("touchend", onTouchEnd)
+            container.addEventListener("wheel", onWheel)
         }
         return () => {
             if (container) {
                 container.removeEventListener("touchstart", onTouchStart, true)
-                container.removeEventListener("touchmove", onTouchMove, true)
+                container.removeEventListener("touchend", onTouchEnd, true)
                 container.removeEventListener("wheel", onWheel, true)
             }
         }
-    }, [onTouchStart, onTouchMove, onWheel])
+    }, [onTouchStart, onTouchEnd, onWheel])
 
     return (
         <Box
