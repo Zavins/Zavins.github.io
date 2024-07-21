@@ -2,14 +2,16 @@ FROM node:18-alpine AS builder
 WORKDIR /code/
 
 # The NPM Packages
-COPY package.json package-lock.json /code/
-RUN npm install --production
+COPY lib/ lib/
+COPY package.json pnpm-lock.yaml /code/
+RUN npm install -g pnpm
+RUN pnpm install --production
 
 # The actual code
 COPY public/ public/
 COPY src/ src/
 COPY tsconfig.json tsconfig.json
-RUN npm run build
+RUN pnpm run build
 
 # Serving with nginx
 FROM nginx:1.25.3
