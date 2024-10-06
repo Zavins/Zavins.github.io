@@ -6,9 +6,9 @@ import theme from "./theme"
 
 const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement)
 root.render(
-    <React.StrictMode>
-        <CssVarsProvider defaultMode="system" theme={theme}>
-            <App />
-        </CssVarsProvider>
-    </React.StrictMode>,
+  <React.StrictMode>
+    <CssVarsProvider defaultMode="system" theme={theme}>
+      <App />
+    </CssVarsProvider>
+  </React.StrictMode>,
 )
