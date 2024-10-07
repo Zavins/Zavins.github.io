@@ -27,7 +27,7 @@ const ProjectPage = () => {
         "AWS",
       ],
       img: {
-        src: `${process.env.PUBLIC_URL}/images/fablix.png`,
+        src: `/images/fablix.png`,
         alt: "Fablix movie website cover picture",
       },
       github: "https://github.com/Zavins/fablix-movie",
@@ -39,7 +39,7 @@ const ProjectPage = () => {
       details: [],
       techStacks: ["React", "TypeScript", "Material UI", "HTML5", "CSS3", "Docker", "Nginx"],
       img: {
-        src: `${process.env.PUBLIC_URL}/images/personal_website.png`,
+        src: `/images/personal_website.png`,
         alt: "My personal website cover picture",
       },
       github: "https://github.com/Zavins/zavins.github.io",
@@ -59,7 +59,7 @@ const ProjectPage = () => {
         "Docker",
       ],
       img: {
-        src: `${process.env.PUBLIC_URL}/images/mindwise.png`,
+        src: `/images/mindwise.png`,
         alt: "MindWise website cover picture",
       },
       github: "https://github.com/Zavins/mindwise",
@@ -71,7 +71,7 @@ const ProjectPage = () => {
       details: intl.get("CRYPTOTRACKER_DETAILS") as unknown as string[],
       techStacks: ["Android Studio", "Kotlin"],
       img: {
-        src: `${process.env.PUBLIC_URL}/images/cryptotracker.png`,
+        src: `/images/cryptotracker.png`,
         alt: "CryptoTracker website cover picture",
       },
       github: "https://github.com/Zavins/CryptoTracker",
@@ -82,7 +82,7 @@ const ProjectPage = () => {
       details: [],
       techStacks: ["Python", "Beautiful Soup", "React", "Material UI", "CSS3", "JavaScript"],
       img: {
-        src: `${process.env.PUBLIC_URL}/images/search_engine_project.png`,
+        src: `/images/search_engine_project.png`,
         alt: "Search engine project cover picture",
       },
       github: "https://github.com/Zavins/search-engine-project",
@@ -93,7 +93,7 @@ const ProjectPage = () => {
       details: intl.get("PONG_GAME_ONLINE_DETAILS") as unknown as string[],
       techStacks: ["JavaScript", "HTML5", "CSS3"],
       img: {
-        src: `${process.env.PUBLIC_URL}/images/pong_game.png`,
+        src: `/images/pong_game.png`,
         alt: "Pong game online cover picture",
       },
       github: "https://github.com/zavins/PongGame",

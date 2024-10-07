@@ -10,7 +10,7 @@ const ExperiencePage = () => {
       subtitle: intl.get("TENCENT_AMERICA"),
       detail: intl.get("SOFTWARE_ENGINEER_INTERN_DETAIL"),
       icon: {
-        src: `${process.env.PUBLIC_URL}/images/tencent_america_logo.png`,
+        src: `/images/tencent_america_logo.png`,
         alt: intl.get("TENCENT_AMERICA_LOGO"),
       },
       date: intl.get("SOFTWARE_ENGINEER_INTERN_DATE"),
@@ -20,7 +20,7 @@ const ExperiencePage = () => {
       subtitle: intl.get("CORNELL_UNIVERSITY_SUBTITLE"),
       detail: intl.get("MENG_IN_COMPUTER_SCIENCE_DETAIL"),
       icon: {
-        src: `${process.env.PUBLIC_URL}/images/cornell_logo.png`,
+        src: `/images/cornell_logo.png`,
         alt: intl.get("CORNELL_UNIVERSITY_LOGO"),
       },
       date: intl.get("MENG_IN_COMPUTER_SCIENCE_DATE"),
@@ -30,7 +30,7 @@ const ExperiencePage = () => {
       subtitle: intl.get("UCI_OFFICE_OF_INFORMATION_TECHNOLOGY_SUBTITLE"),
       detail: intl.get("FULL_STACK_SOFTWARE_ENGINEER_DETAIL"),
       icon: {
-        src: `${process.env.PUBLIC_URL}/images/uci_oit_logo.png`,
+        src: `/images/uci_oit_logo.png`,
         alt: intl.get("UCI_OFFICE_OF_INFORMATION_TECHNOLOGY_LOGO"),
       },
       date: intl.get("FULL_STACK_SOFTWARE_ENGINEER_DATE"),
@@ -40,7 +40,7 @@ const ExperiencePage = () => {
       subtitle: intl.get("UCI_DEEPEM_LAB_SUBTITLE"),
       detail: intl.get("RESEARCH_ASSISTANT_DETAIL"),
       icon: {
-        src: `${process.env.PUBLIC_URL}/images/uci_logo.png`,
+        src: `/images/uci_logo.png`,
         alt: intl.get("UCI_DEEPEM_LAB_LOGO"),
       },
       date: intl.get("RESEARCH_ASSISTANT_DATE"),
@@ -50,7 +50,7 @@ const ExperiencePage = () => {
       subtitle: intl.get("UNIVERSITY_OF_CALIFORNIA_IRVINE_SUBTITLE"),
       detail: intl.get("BS_IN_COMPUTER_SCIENCE_DETAIL"),
       icon: {
-        src: `${process.env.PUBLIC_URL}/images/uci_logo.png`,
+        src: `/images/uci_logo.png`,
         alt: intl.get("UNIVERSITY_OF_CALIFORNIA_IRVINE_LOGO"),
       },
       date: intl.get("BS_IN_COMPUTER_SCIENCE_DATE"),
@@ -60,7 +60,7 @@ const ExperiencePage = () => {
       subtitle: intl.get("CHANGING_THE_PRESENT_SUBTITLE"),
       detail: intl.get("DATA_RESEARCH_INTERN_DETAIL"),
       icon: {
-        src: `${process.env.PUBLIC_URL}/images/changingthepresent_logo.png`,
+        src: `/images/changingthepresent_logo.png`,
         alt: intl.get("CHANGING_THE_PRESENT_LOGO"),
       },
       date: intl.get("DATA_RESEARCH_INTERN_DATE"),
@@ -70,7 +70,7 @@ const ExperiencePage = () => {
       subtitle: intl.get("NYC_LAB_SCHOOL_FOR_COLLABORATIVE_STUDIES_SUBTITLE"),
       detail: intl.get("HIGH_SCHOOL_STUDENT_DETAIL"),
       icon: {
-        src: `${process.env.PUBLIC_URL}/images/labhigh_logo.png`,
+        src: `/images/labhigh_logo.png`,
         alt: intl.get("NYC_LAB_HIGH_SCHOOL_LOGO"),
       },
       date: intl.get("HIGH_SCHOOL_STUDENT_DATE"),

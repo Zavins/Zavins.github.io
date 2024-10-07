@@ -138,7 +138,7 @@ const Character = () => {
         style={{
           width: "inherit",
           height: "inherit",
-          background: `url('${process.env.PUBLIC_URL}/images/avatar_no_eyes.png')`,
+          background: `url('/images/avatar_no_eyes.png')`,
           backgroundSize: "contain",
           backgroundRepeat: "no-repeat",
         }}

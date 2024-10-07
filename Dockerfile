@@ -1,4 +1,4 @@
-FROM node:18-alpine AS builder
+FROM node:20-alpine AS builder
 WORKDIR /code/
 
 # The NPM Packages
@@ -10,13 +10,13 @@ RUN pnpm install --production
 # The actual code
 COPY public/ public/
 COPY src/ src/
-COPY tsconfig.json tsconfig.json
-RUN pnpm run build
+COPY index.html tsconfig.json tsconfig.node.json vite.config.ts /code/
+RUN pnpm build
 
 # Serving with nginx
-FROM nginx:1.25.3
+FROM fholzer/nginx-brotli:v1.26.2
 COPY nginx.conf /etc/nginx/nginx.conf
-COPY --from=builder /code/build /usr/share/nginx/html
+COPY --from=builder /code/dist /usr/share/nginx/html
 RUN chown 1011:1011 -R /usr/share/nginx/html/
 RUN chmod a+r -R /usr/share/nginx/html/
 RUN chown 1011:1011 -R /var/cache/nginx

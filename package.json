@@ -2,8 +2,8 @@
   "name": "personal-website",
   "version": "0.0.1",
   "private": true,
+  "type": "module",
   "dependencies": {
-    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@emotion/react": "^11.11.3",
     "@emotion/styled": "^11.11.0",
     "@fullpage/react-fullpage": "^0.1.40",
@@ -11,31 +11,29 @@
     "@mui/icons-material": "^5.15.2",
     "@mui/joy": "^5.0.0-beta.20",
     "@mui/material": "^5.15.2",
-    "@types/jest": "^29.5.11",
-    "@types/node": "^20.10.5",
-    "@types/react": "^18.2.0",
-    "@types/react-dom": "^18.2.0",
+    "@types/react": "^18.2.66",
+    "@types/react-dom": "^18.2.22",
     "@types/react-transition-group": "^4.4.10",
     "@types/react-vertical-timeline-component": "^3.3.6",
+    "@vitejs/plugin-react-swc": "^3.5.0",
+    "eslint-plugin-prettier": "^5.1.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-intl-universal": "^2.9.1",
     "react-page-scroller": "^3.0.1",
-    "react-scripts": "5.0.1",
     "react-ts-full-page-scroll": "file:lib/react-ts-full-page-scroll.tgz",
     "react-vertical-timeline-component": "^3.6.0",
-    "typescript": "^4.9.5",
+    "typescript": "^5.2.2",
     "typewriter-effect": "^2.21.0",
-    "web-vitals": "^3.5.1"
+    "vite": "^5.2.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
+    "dev": "vite --host",
+    "build": "tsc && vite build",
     "lint": "eslint \"**/*.{ts,tsx,js,jsx,json}\"",
     "lint:fix": "eslint --fix \"**/*.{ts,tsx,js,jsx,json}\"",
-    "format": "npx prettier \"**/*.{ts,tsx,js,jsx,json}\" --write"
+    "format": "npx prettier \"**/*.{ts,tsx,js,jsx,json}\" --write",
+    "preview": "vite preview"
   },
   "eslintConfig": {
     "extends": [
@@ -56,19 +54,15 @@
     ]
   },
   "devDependencies": {
-    "@testing-library/jest-dom": "^6.1.6",
-    "@testing-library/react": "^14.1.2",
-    "@testing-library/user-event": "^14.5.1",
     "@typescript-eslint/eslint-plugin": "^6.16.0",
     "@typescript-eslint/parser": "^6.16.0",
-    "ajv": "^7.2.4",
     "eslint": "^8.56.0",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-config-standard-with-typescript": "^43.0.0",
     "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-n": "^16.5.0",
     "eslint-plugin-prettier": "^5.1.2",
     "eslint-plugin-promise": "^6.1.1",
-    "eslint-plugin-react": "^7.33.2"
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.6"
   }
 }
