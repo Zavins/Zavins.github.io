@@ -1,42 +1,28 @@
 @font-face {
     font-family: 'zy_zheng_yuan';
-    src: url('/fonts/hyzhengyuan-35w.ttf') format('truetype');
-    font-weight: 300;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'zy_zheng_yuan';
-    src: url('/fonts/hyzhengyuan-45w.ttf') format('truetype');
+    src: url('/fonts/hyzhengyuan-45w.woff2') format('woff2');
     font-weight: 400;
-    font-style: normal;
+    font-style: light;
+    font-display: swap;
 }
 @font-face {
     font-family: 'zy_zheng_yuan';
-    src: url('/fonts/hyzhengyuan-55w.ttf') format('truetype');
-    font-weight: 500;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'zy_zheng_yuan';
-    src: url('/fonts/hyzhengyuan-65w.ttf') format('truetype');
+    src: url('/fonts/hyzhengyuan-65w.woff2') format('woff2');
     font-weight: 600;
     font-style: normal;
+    font-display: swap;
 }
 @font-face {
     font-family: 'zy_zheng_yuan';
-    src: url('/fonts/hyzhengyuan-75w.ttf') format('truetype');
-    font-weight: 700;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'zy_zheng_yuan';
-    src: url('/fonts/hyzhengyuan-85w.ttf') format('truetype');
+    src: url('/fonts/hyzhengyuan-85w.woff2') format('woff2');
     font-weight: 800;
-    font-style: normal;
+    font-style: bold;
+    font-display: swap;
 }
 @font-face {
     font-family: 'zy_zheng_yuan';
-    src: url('/fonts/hyzhengyuan-95w.ttf') format('truetype');
+    src: url('/fonts/hyzhengyuan-95w.woff2') format('woff2');
     font-weight: 900;
-    font-style: normal;
+    font-style: bolder;
+    font-display: swap;
 }
